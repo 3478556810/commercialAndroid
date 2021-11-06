@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/comments_community"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:cardBackgroundColor="#72D6D7DD"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/CommentsUser_icon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/sc1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/commentsUser_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="善擦"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/comments_passTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:text="刚刚"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/appreciate_comments"
+                        android:layout_width="25dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/nonapprecaited" />
+
+                    <TextView
+                        android:id="@+id/appreciate_count"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="28dp"
+                        android:text="0" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/comments_introView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:text="蟾桂殷河夜，渺星缭舫鱼。"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="15dp"
+
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/comments_imgView"
+                        android:layout_width="150dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/sc1"
+                        android:scaleType="fitXY" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintTop_toBottomOf="@id/comments_community"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ViewFlipper
+                    android:id="@+id/commodity_flipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoStart="true"
+                    android:layout_margin="10dp"
+                    android:flipInterval="3000"
+                    android:inAnimation="@android:anim/slide_in_left"
+                    android:outAnimation="@android:anim/slide_out_right">
+
+                    <ImageView
+
+                        android:id="@+id/commodityIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:background="@drawable/sc1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:background="@drawable/sc2" />
+                </ViewFlipper>
+
+                <TextView
+                    android:id="@+id/commodityIntro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:padding="20dp"
+                    android:background="#72D6D7DD"
+                    android:text="@string/signature" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

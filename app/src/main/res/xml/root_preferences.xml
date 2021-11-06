@@ -1,0 +1,66 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <PreferenceCategory app:title="个人资料">
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="你的签名"
+            app:useSimpleSummaryProvider="true" />
+
+
+    </PreferenceCategory>
+
+
+
+    <PreferenceCategory app:title="消息">
+
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="通知"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="主题">
+
+    <SwitchPreferenceCompat
+        app:key="night"
+        app:title="暗黑模式" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory app:title="图片资源自动下载">
+
+        <SwitchPreferenceCompat
+            app:key="attachment"
+            app:summaryOff="任何时候都自动下载"
+            app:summaryOn="只在WLAN环境下自动下载"
+            app:title="WLAN环境下自动更新" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="版本更新">
+<ListPreference
+    app:title="版本号                                                             1.12"
+    />
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="自动更新" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="只在WLAN环境下自动更新"
+            app:summaryOn="任何时候都自动更新"
+            app:title="网络环境下自动更新" />
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

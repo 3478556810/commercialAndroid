@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.homeInner.mainPaper">
+
+
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="true"
+                >
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@drawable/bg" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:padding="15dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="0dp"
+                            cardCornerRadius="5dp">
+
+                            <ViewFlipper
+                                android:id="@+id/vf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="180dp"
+                                android:autoStart="true"
+                                android:flipInterval="5000"
+                                android:inAnimation="@android:anim/slide_in_left"
+                                android:outAnimation="@android:anim/slide_out_right">
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/carousel1" />
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/carousel2" />
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/carousel3" />
+
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/carousel4" />
+
+
+                            </ViewFlipper>
+
+                            <RadioGroup
+                                android:layout_width="183dp"
+                                android:layout_height="40dp"
+                                android:layout_marginLeft="100dp"
+                                android:layout_marginTop="130dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/rb1"
+                                    style="@style/setting_rb"
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:button="@null" />
+
+                                <RadioButton
+                                    android:id="@+id/rb2"
+                                    style="@style/setting_rb"
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:button="@null" />
+
+                                <RadioButton
+                                    android:id="@+id/rb3"
+                                    style="@style/setting_rb"
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:button="@null"
+
+                                    />
+
+                                <RadioButton
+                                    android:id="@+id/rb4"
+                                    style="@style/setting_rb"
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:button="@null" />
+                            </RadioGroup>
+                        </androidx.cardview.widget.CardView>
+                    </FrameLayout>
+
+                    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                        android:id="@+id/refreshLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="200dp"
+                        srlReboundDuration="2500">
+
+                        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                            android:id="@+id/classicHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+
+                            />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/commodity_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#EAF0F3" />
+
+                        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+                </FrameLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

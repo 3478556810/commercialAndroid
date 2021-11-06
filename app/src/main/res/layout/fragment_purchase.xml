@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.shopping"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@drawable/purchasebgtop"
+        android:layout_height="45dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/purchase_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="22dp"
+            android:src="@drawable/sc1" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="购物车"
+    android:textSize="20dp"
+    android:layout_marginLeft="120dp"
+    android:textColor="@color/white"/>
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.core.widget.NestedScrollView
+        android:background="#DDE7EC"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+    <FrameLayout
+
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/purchase_rcView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.bottomappbar.BottomAppBar
+
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        tools:ignore="BottomAppBar" >
+
+        <Button
+            android:id="@+id/allChecked"
+            android:background="@drawable/unchecked"
+            android:layout_marginLeft="25dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
+        <TextView
+
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全选"/>
+<TextView
+    android:layout_marginLeft="10dp"
+    android:textColor="@color/black"
+    android:textSize="14dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="合计："/>
+        <TextView
+
+            android:text="¥"
+            android:gravity="center"
+            android:textColor="#FF0303"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+        <TextView
+            android:id="@+id/aggregatePrize"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#E91E63"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="249"
+            />
+        <Button
+            android:background="@drawable/ovalretcyellow"
+            android:text="删除"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"/>
+        <Button
+            android:background="@drawable/ovalretcred"
+
+            android:layout_marginLeft="10dp"
+            android:text="去结算(1)"
+            android:singleLine="true"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:layout_width="100dp"
+            android:layout_height="40dp"/>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_marginTop="2dp"
+    android:layout_height="0.1dp"
+    android:background="@color/black"/>
+</LinearLayout>

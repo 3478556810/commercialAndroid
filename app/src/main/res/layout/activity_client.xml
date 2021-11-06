@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+<androidx.cardview.widget.CardView
+    android:layout_margin="20dp"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="15dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="           id                  name                 prize  "
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+    <ListView
+        android:divider="@null"
+        android:scrollbars="none"
+        android:id="@+id/lv1"
+        android:layout_weight="1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ListView
+        android:divider="@null"
+        android:scrollbars="none"
+        android:id="@+id/lv2"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <ListView
+        android:divider="@null"
+        android:scrollbars="none"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/lv3"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/send"
+        android:background="@drawable/ovalretcred"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="10dp"
+        android:layout_gravity="center"
+        android:text="update" />
+</LinearLayout>
+
+

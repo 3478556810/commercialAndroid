@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!-- 边框 -->
+    <stroke
+        android:width="1sp"
+        android:color="#9BA3A8" />
+
+    <!-- 形状颜色（如果需要的是空心矩形, 则形状颜色设置为透明） -->
+    <solid android:color="#00000000" />
+    <corners android:radius="50dp" />
+
+    <size
+        android:width="20dp"
+        android:height="20dp"/>
+
+</shape>

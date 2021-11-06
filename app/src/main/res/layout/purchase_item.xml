@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:layout_margin="20dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        app:cardUseCompatPadding="false"
+        app:cardCornerRadius="10dp"
+        android:elevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/itemCheckBtn"
+            android:background="@drawable/unchecked"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <FrameLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+
+                    android:layout_gravity="center"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/storeforitem" />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/purchase_storeView"
+                    android:text="RNG旗舰店"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+
+                <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:layout_width="12dp"
+                    android:layout_height="13dp"
+                    android:background="@drawable/rightbrow" />
+            </LinearLayout>
+
+
+            <Button
+                android:layout_gravity="center"
+                android:text="优惠券"
+                android:textColor="#F44336"
+                android:gravity="center"
+                android:layout_marginLeft="120dp"
+                android:background="@drawable/ovalretcpink"
+                android:layout_width="60dp"
+                android:layout_height="25dp" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="65dp"
+            android:layout_marginLeft="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_gravity="center"
+                android:text="满减"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/ovalretcforbelong"
+                android:layout_width="40dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:text="满2件总价8.5价"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_marginLeft="110dp"
+                android:layout_gravity="center"
+                android:text="去凑单"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:background="@drawable/rightbrow" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/purchase_imageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/sc1" />
+
+            <TextView
+                android:id="@+id/purchase_introView"
+                android:layout_marginLeft="10dp"
+                android:text="RNGTeam Fighting!"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="130dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_gravity="center"
+                android:text="¥"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textColor="#FF0303"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:id="@+id/purchase_prizeView"
+                android:layout_gravity="center"
+                android:text="249"
+               android:layout_marginTop="8dp"
+                android:textColor="#FF0303"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_width="80dp"
+                android:layout_height="40dp" />
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp">
+
+                <Button
+                    android:layout_gravity="center"
+                    android:id="@+id/subBtn"
+                    android:background="@drawable/subbtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+
+                <TextView
+                    android:id="@+id/purchaseSingleTypeItemCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1"
+                    android:layout_margin="8dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/addBtn"
+                    android:layout_gravity="center"
+                    android:background="@drawable/addbtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

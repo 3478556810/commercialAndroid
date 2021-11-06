@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.home">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout
+            android:id="@+id/loomedLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <!--BackgroundForTitleAndSearch-->
+            <RelativeLayout
+                android:id="@+id/changedBg"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp">
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bgfortitle" />
+            </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+
+            <RelativeLayout
+                android:id="@+id/toolbarHome"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/search_tv_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:src="@drawable/sc1" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/search_tv_discourse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="78dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="5dp"
+
+
+                    >
+
+                    <com.example.carouselfigure.widget.MarqueeTextView
+                        android:id="@+id/signature"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:background="#90A9E6E6"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:padding="3dp"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:text="@string/signature" />
+                </androidx.cardview.widget.CardView>
+
+
+                <ImageButton
+                    android:id="@+id/messenge_homeBtn"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="345dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/messege" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="8dp"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+
+                <FrameLayout
+                    android:id="@+id/search_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/search_tv_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+
+                        android:autofillHints="玩偶"
+                        android:background="@drawable/ovalretc"
+                        android:completionThreshold="1"
+                        android:cursorVisible="false"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:hint="搜索"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/search" />
+
+                    <ImageButton
+                        android:id="@+id/photoTaker"
+                        android:layout_width="25dp"
+                        android:layout_height="28dp"
+                        android:layout_marginLeft="280dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/phototaker" />
+
+                    <ImageView
+                        android:id="@+id/divider_homeBtn"
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="315dp"
+                        android:layout_marginTop="8dp"
+                        android:background="#C3C2C2" />
+
+                    <ImageButton
+                        android:id="@+id/qrCodeTaker"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="320dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/qrcode" />
+
+                </FrameLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+        </RelativeLayout>
+
+        <com.example.carouselfigure.widget.AnimationNestedScrollView
+            android:id="@+id/dynamicLayout"
+            android:layout_below="@id/loomedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+
+            >
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/hNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bgfortitle"
+
+                />
+<androidx.viewpager.widget.ViewPager
+    android:id="@+id/homeInnerContainer"
+    android:layout_below="@id/hNavigation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+</RelativeLayout>
+        </com.example.carouselfigure.widget.AnimationNestedScrollView>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 设置的类别 -->
+    <PreferenceCategory
+        android:key="set_navigation"
+        android:summary="用于导航栏设置"
+        android:title="导航栏设置">
+        <CheckBoxPreference
+            android:key="navigation_is_show_and_hide"
+            android:summary="使设备底部导航栏不可见"
+            android:defaultValue="false"
+            android:title="隐藏导航栏"/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+android:background="#EAF0F3"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_fragment_personal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/mybgtop"
+        >
+        <ImageButton
+            android:id="@+id/notification_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/notification" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="我的"
+    android:textColor="@color/black"
+    android:textSize="20dp"
+    android:layout_marginLeft="140dp"
+    />
+        <ImageButton
+            android:id="@+id/setting_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="130dp"
+            android:background="@drawable/setting" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+<FrameLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="280dp">
+            <!--磨砂头像-->
+            <RelativeLayout
+
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@+id/toolbar_fragment_personal">
+
+                <ImageView
+                    android:id="@+id/h_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp" />
+
+            </RelativeLayout>
+
+
+    <ImageView
+        android:layout_marginTop="120dp"
+        android:background="@drawable/mybgbottom"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/h_head"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/sc1" />
+
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="140dp"
+            android:text="善擦"
+            android:textColor="#323131"
+            android:textSize="23sp" />
+
+        <com.example.carouselfigure.widget.MarqueeTextView
+            android:layout_marginTop="165dp"
+            android:layout_marginLeft="140dp"
+            android:id="@+id/user_signature"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_name"
+            android:gravity="center"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@string/signature"
+            android:textColor="#5B555C"
+            android:textSize="17dp" />
+<ImageView
+    android:layout_marginTop="132dp"
+    android:layout_marginLeft="210dp"
+    android:layout_width="25dp"
+    android:layout_height="25dp"
+    android:background="@drawable/male"
+    />
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="195dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:id="@+id/wallet"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/wallet" />
+
+                        <TextView
+                            android:id="@+id/money_mine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/wallet"
+                            android:layout_marginLeft="44dp"
+                            android:text="0.00元"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <ImageButton
+                            android:id="@+id/evaluate"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="140dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/evaluate_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/evaluate"
+                            android:layout_marginLeft="140dp"
+                            android:text="评价"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <ImageButton
+                            android:id="@+id/history"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="230dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/history_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/history"
+                            android:layout_marginLeft="230dp"
+                            android:text="历史"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <ImageButton
+                            android:id="@+id/order"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="310dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/order_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/order"
+                            android:layout_marginLeft="310dp"
+                            android:text="订单"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comments_view"
+                android:layout_marginTop="300dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAF0F3" />
+        </FrameLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

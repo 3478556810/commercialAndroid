@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    tools:ignore="MissingConstraints">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="0dp"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/commodity_imageView"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sc1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/linear_introView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/commodity_imageView"
+                    >
+
+                <TextView
+                    android:id="@+id/commodity_belong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="津东超市"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:padding="3dp"
+                    android:background="@drawable/ovalretcforbelong"
+                    />
+                <TextView
+                    android:id="@+id/commodity_introView"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="测试"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                     />
+
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:id="@+id/commodity_prizeView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="测试"
+                    android:textColor="#F10B0B"
+                    android:textSize="25sp"
+                    app:layout_constraintTop_toBottomOf="@id/linear_introView"
+
+                    />
+
+                <Button
+
+                    android:id="@+id/del_button"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@android:drawable/ic_menu_close_clear_cancel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
