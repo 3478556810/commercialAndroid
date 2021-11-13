@@ -79,8 +79,8 @@ public class shopping extends Fragment {
         dBHelper.getWritableDatabase();
         SQLiteDatabase db = dBHelper.getReadableDatabase();
         recyclerViewForPurchase = view.findViewById(R.id.purchase_rcView);
-        pList.add(new Commodity(0, db));
-        pList.add(new Commodity(1, db));
+//        pList.add(new Commodity(0, db));
+//        pList.add(new Commodity(1, db));
         rcAdapterForPurchase = new RecyclerAdapterForPurchaseItem(pList);
         layoutManagerForPurchase = new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false);
         recyclerViewForPurchase.setLayoutManager(layoutManagerForPurchase);

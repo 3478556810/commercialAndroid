@@ -117,7 +117,7 @@ public class community extends Fragment {
 
         //ForComments
         recyclerViewForComments = view.findViewById(R.id.community_commentsView);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sc1);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.commodity_shancadoll);
         DBHelper dBHelper = new DBHelper(getActivity(), "Data.db", null, 1);
         dBHelper.getWritableDatabase();
         SQLiteDatabase db = dBHelper.getReadableDatabase();

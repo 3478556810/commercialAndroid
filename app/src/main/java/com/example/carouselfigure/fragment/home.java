@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -49,6 +50,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.example.carouselfigure.EntertainmentActivity;
+import com.example.carouselfigure.Registeractivity;
 import com.example.carouselfigure.SearchExportActivity;
 import com.example.carouselfigure.adapter.HomeInnerPageAdapter;
 import com.example.carouselfigure.fragment.homeInner.classificationPaper;
@@ -79,8 +82,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static com.example.carouselfigure.fragment.homeInner.mainPaper.downdis;
 
 //Contents
 //0 component define
@@ -95,6 +102,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class home extends Fragment {
     //constants
+    static double updis=0.0;
     Boolean flag = true;
     private static final int RESULT_OK = 1;
     private static final int REQUEST_CODE = 1;
@@ -255,6 +263,13 @@ public class home extends Fragment {
                 intentIntegrator.initiateScan();
             }
         });
+
+        messengeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), EntertainmentActivity.class));
+            }
+        });
         //输入框
         acView.setDropDownWidth(600);
         acView.setDropDownHorizontalOffset(80);
@@ -286,10 +301,9 @@ public class home extends Fragment {
         GestureDetector.SimpleOnGestureListener simpleOnGestureListener = new GestureDetector.SimpleOnGestureListener() {
             @Override
 
-            public boolean onFling(MotionEvent e1, MotionEvent e2, float v, float v1) {
+            public boolean onFling(MotionEvent e1, MotionEvent e2, float vx, float vy) {
                 if (e1.getY() - e2.getY() > MIN_MOVE) {
                     //下滑实现动画伸缩
-
                     animatorADD.addUpdateListener(animation1 -> {
                         Float x = (Float) animatorADD.getAnimatedValue();
                         int value = x.intValue();
@@ -300,7 +314,6 @@ public class home extends Fragment {
                         //toolbar
                         tv_discourse.setVisibility(View.GONE);
                         //search
-//                     Log.v("changed", String.valueOf(e1.getY() - e2.getY()));
                         searchLayoutParams.width = (int) (80 - (value - 600));
                         ll_search.setLayoutParams(searchLayoutParams);
                         // loomed
@@ -346,8 +359,8 @@ public class home extends Fragment {
                         bgLayoutParams.height = mHeightBG;
                         changedImg.setLayoutParams(bgLayoutParams);
                     });
-                    animatorADD.start();
-
+                        if (downdis==0)
+                            animatorADD.start();
                 }
 
                 return true;
@@ -365,6 +378,9 @@ public class home extends Fragment {
         };
 
         ((MainActivity) getActivity()).registerMyOnTouchListener(myOnTouchListener);
+
+
+
 
         return view;
 

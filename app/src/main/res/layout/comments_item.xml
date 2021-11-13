@@ -42,7 +42,7 @@
                         android:layout_height="40dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="15dp"
-                        android:src="@drawable/sc1" />
+                        android:src="@drawable/commodity_shancadoll" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                         android:id="@+id/comments_imgView"
                         android:layout_width="150dp"
                         android:layout_height="120dp"
-                        android:background="@drawable/sc1"
+                        android:background="@drawable/commodity_shancadoll"
                         android:scaleType="fitXY" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -144,12 +144,12 @@
                         android:id="@+id/commodityIcon"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
-                        android:background="@drawable/sc1" />
+                        android:background="@drawable/commodity_shancadoll" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
-                        android:background="@drawable/sc2" />
+                        android:background="@drawable/commodity_liuliancake" />
                 </ViewFlipper>
 
                 <TextView

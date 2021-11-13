@@ -25,6 +25,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ import java.util.List;
 import com.example.carouselfigure.adapter.RecyclerAdapterForComments;
 import com.example.carouselfigure.broadcastReceiver.internetBroadcast;
 import com.example.carouselfigure.entity.Comments;
+import com.example.carouselfigure.entity.Person;
 import com.example.carouselfigure.fragment.community;
 import com.example.carouselfigure.fragment.home;
 import com.example.carouselfigure.fragment.mine;
@@ -43,6 +45,11 @@ import com.example.carouselfigure.util.BSUtil;
 import com.example.carouselfigure.util.SwitchFragmentUtil;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
+
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
+        Bmob.initialize(this, "f4a201ea7d372e1fe6afa22d17359610");
         //组件获取
 
         bnv_menu = (BottomNavigationView) findViewById(R.id.bnv_menu);
@@ -70,8 +77,22 @@ public class MainActivity extends AppCompatActivity {
 
         //初始化
         initBottomNav();
-
-    }
+//        Person p2 = new Person();
+//        p2.setName("lucky");
+//        p2.setAddress("北京海淀");
+//        p2.save(new SaveListener<String>() {
+//            @Override
+//            public void done(String objectId, BmobException e) {
+//                if(e==null){
+//                  Toast.makeText(MainActivity.this,"添加数据成功，返回objectId为："+objectId,Toast.LENGTH_LONG).show();
+//                }else{
+//                    Toast.makeText(MainActivity.this,"创建数据失败：" + e.getMessage(),Toast.LENGTH_LONG).show();
+//
+//                }
+//            }
+//        });
+//
+   }
 
     @Override
     protected void onDestroy() {
@@ -109,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
 
     public interface MyOnTouchListener {

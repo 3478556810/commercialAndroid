@@ -2,6 +2,7 @@ package com.example.carouselfigure.entity;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.util.Log;
 
 import com.example.carouselfigure.R;
@@ -14,12 +15,14 @@ import java.util.Set;
 
 public class Commodity implements Serializable {
     private int commodity_id;
+    private String name;
     private String introduction;
     private int imageId;
+    private Bitmap bitmap;
     private double prize;
     public static String TYPE = "¥";
     private String belong;
-    private Set <String> tagSet=new HashSet<>();
+    private String tag;
     private DBHelper dBHelper;
     ArrayList<String> intro_arr=new ArrayList<>();
     ArrayList<String> img_arr=new ArrayList<>();
@@ -48,6 +51,22 @@ public class Commodity implements Serializable {
         this.belong = belong_arr.get(commodity_id);
     }
 
+public Commodity (int id, String name, String intro, String belong, Bitmap bitmap, String tag, String prize)
+{
+    this.commodity_id=id;
+    this.name =name;
+    this.introduction=intro;
+    this.belong=belong;
+    this.bitmap=bitmap;
+    this.tag=tag;
+    this.prize=Double.parseDouble(prize);
+
+}
+
+
+
+
+
 
     public int strToInt(String name)
     {
@@ -61,6 +80,7 @@ public class Commodity implements Serializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        Log.v("ff", String.valueOf(resId));
         return resId;
 
 

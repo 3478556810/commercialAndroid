@@ -23,7 +23,7 @@
         android:layout_marginLeft="22dp"
         android:layout_marginTop="3dp"
         android:gravity="center"
-        android:src="@drawable/sc1" />
+        android:src="@drawable/commodity_shancadoll" />
 
 </androidx.appcompat.widget.Toolbar>
     <FrameLayout

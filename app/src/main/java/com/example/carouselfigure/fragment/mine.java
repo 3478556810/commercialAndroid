@@ -31,7 +31,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.example.carouselfigure.MainActivity;
+import com.example.carouselfigure.ClientActivity;
 import com.example.carouselfigure.R;
 import com.example.carouselfigure.SettingsActivity;
 import com.example.carouselfigure.adapter.RecyclerAdapterForComments;
@@ -112,7 +112,7 @@ public class mine extends Fragment {
         hHead = view.findViewById(R.id.h_head);
         setting_btn = view.findViewById(R.id.setting_btn);
         signature = view.findViewById(R.id.user_signature);
-        Glide.with(getActivity()).load(R.drawable.sc1)
+        Glide.with(getActivity()).load(R.drawable.commodity_shancadoll)
                 .bitmapTransform(new BlurTransformation(getActivity(), 25), new CenterCrop(getActivity()))
                 .into(hBack);
 
@@ -140,6 +140,13 @@ public class mine extends Fragment {
             }
         });
 
+         view.findViewById(R.id.notification_btn).setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startActivity(new Intent (getActivity(), ClientActivity.class));
+                return true;
+            }
+        });
 
         return view;
     }

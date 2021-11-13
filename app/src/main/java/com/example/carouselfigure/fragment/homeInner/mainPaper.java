@@ -2,6 +2,8 @@ package com.example.carouselfigure.fragment.homeInner;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
@@ -68,6 +70,7 @@ public class mainPaper extends Fragment {
     static int TOPMARGIN = 0;
     static int HEIGH = 0;
     static int BOTTOMMARGIN = 0;
+    public static double downdis=0.0;
     //ViewFlipper
     private ViewFlipper flipper;
     private RadioButton rb1;
@@ -105,7 +108,7 @@ public class mainPaper extends Fragment {
     //??
     private DBHelper dBHelper;
     private Fragment mine;
-
+private long commodityLines;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -191,19 +194,21 @@ public class mainPaper extends Fragment {
                 dBHelper.getWritableDatabase();
                 SQLiteDatabase db = dBHelper.getReadableDatabase();
                 Set<Integer> set = new HashSet<Integer>();
-                for (int i = 0; i < 7; i++) {
-                    int r;
-                    do {
-                        r = (int) (Math.random() * 7);
-                    } while (set.contains(r));
-                    set.add(r);
-                    mList.add(new Commodity(r, db));
+                if (db.query(false, "commodity", null, null, null, null, null, null, null).getCount() != 0) {
+                    for (int i = 0; i < commodityLines; i++) {
+                        int r;
+                        do {
+                            r = (int) (Math.random() * commodityLines);
+                        } while (set.contains(r));
+                        set.add(r);
+                        mList.add(new Commodity(r, db));
+                    }
+                    rcAdapter = new RecyclerAdapterForCommodity(mList);
+                    layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); //每行两个瀑布流排列
+                    recyclerView.setLayoutManager(layoutManager);
+                    recyclerView.setAdapter(rcAdapter);
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
                 }
-                rcAdapter = new RecyclerAdapterForCommodity(mList);
-                layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); //每行两个瀑布流排列
-                recyclerView.setLayoutManager(layoutManager);
-                recyclerView.setAdapter(rcAdapter);
-                recyclerView.setItemAnimator(new DefaultItemAnimator());
             }
         });
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
@@ -220,10 +225,10 @@ public class mainPaper extends Fragment {
                 dBHelper.getWritableDatabase();
                 SQLiteDatabase db = dBHelper.getReadableDatabase();
                 Set<Integer> set = new HashSet<Integer>();
-                for (int i = 0; i < 7; i++) {
+                for (int i = 0; i < commodityLines; i++) {
                     int r;
                     do {
-                        r = (int) (Math.random() * 7);
+                        r = (int) (Math.random() * commodityLines);
                     } while (set.contains(r));
                     set.add(r);
                     mList.add(new Commodity(r, db));
@@ -264,6 +269,11 @@ public class mainPaper extends Fragment {
 
         ((MainActivity) getActivity()).registerMyOnTouchListener(myOnTouchListener);
 
+
+
+
+
+
         return view;
     }
 
@@ -274,10 +284,11 @@ public class mainPaper extends Fragment {
         dBHelper.getWritableDatabase();
         SQLiteDatabase db = dBHelper.getReadableDatabase();
         Set<Integer> set = new HashSet<Integer>();
-        for (int i = 0; i < 7; i++) {
+        commodityLines = DatabaseUtils.queryNumEntries(db, "commodity");
+        for (int i = 0; i < commodityLines; i++) {
             int r;
             do {
-                r = (int) (Math.random() * 7);
+                r = (int) (Math.random() * commodityLines);
             } while (set.contains(r));
             set.add(r);
             mList.add(new Commodity(r, db));

@@ -21,7 +21,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="-18dp"
             android:padding="1dp"
-            android:src="@drawable/sc1" />
+            android:src="@drawable/commodity_shancadoll" />
 
         <TextView
             android:id="@+id/community_name"

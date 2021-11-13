@@ -31,7 +31,7 @@
                     android:layout_height="180dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/sc1"
+                    android:src="@drawable/commodity_shancadoll"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
