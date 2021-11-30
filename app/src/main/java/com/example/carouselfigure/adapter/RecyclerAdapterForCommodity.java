@@ -62,6 +62,7 @@ public class RecyclerAdapterForCommodity extends RecyclerView.Adapter<RecyclerAd
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Commodity commodityItem = commodityList.get(position);
+
         holder.commodity_imageView.setImageResource(commodityItem.getImageId());
         holder.commodity_introView.setText(commodityItem.getIntroduction());
         holder.commodity_prizeView.setText(commodityItem.TYPE + String.valueOf(commodityItem.getPrize()));

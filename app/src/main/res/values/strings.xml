@@ -3,6 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="signature">\"这家伙很可爱，什么都留了下来\"</string>
+    <string name="commoditySummary">"香甜可口，好吃不贵。。。"</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->

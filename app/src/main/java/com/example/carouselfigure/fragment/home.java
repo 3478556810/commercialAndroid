@@ -7,83 +7,59 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.preference.PreferenceManager;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Handler;
-import android.os.Parcelable;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.BounceInterpolator;
-import android.view.animation.CycleInterpolator;
 import android.view.animation.LinearInterpolator;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.example.carouselfigure.EntertainmentActivity;
-import com.example.carouselfigure.Registeractivity;
-import com.example.carouselfigure.SearchExportActivity;
+import com.example.carouselfigure.EntertainmentActivity.EntertainmentActivityForCombat;
+import com.example.carouselfigure.cardinalActivity.SearchExportActivity;
 import com.example.carouselfigure.adapter.HomeInnerPageAdapter;
 import com.example.carouselfigure.fragment.homeInner.classificationPaper;
 import com.example.carouselfigure.fragment.homeInner.finePaper;
 import com.example.carouselfigure.fragment.homeInner.fleaMarketPaper;
 import com.example.carouselfigure.fragment.homeInner.mainPaper;
-import com.example.carouselfigure.util.SFInnerHomeUtil;
 import com.example.carouselfigure.widget.AnimationNestedScrollView;
 import com.example.carouselfigure.entity.Commodity;
-import com.example.carouselfigure.util.CommonUtil;
 import com.example.carouselfigure.sqlite.DBHelper;
-import com.example.carouselfigure.MainActivity;
+import com.example.carouselfigure.cardinalActivity.MainActivity;
 import com.example.carouselfigure.R;
 import com.example.carouselfigure.adapter.RecyclerAdapterForCommodity;
 
 import com.example.carouselfigure.util.SwitchFragmentUtil;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.carouselfigure.widget.NoScrollViewPaper;
 import com.google.android.material.tabs.TabLayout;
 import com.google.zxing.integration.android.IntentIntegrator;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -119,7 +95,7 @@ public class home extends Fragment {
     List<Fragment> fragmentList = new ArrayList<>();
     List<String> tabTitles = new ArrayList<>();
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private NoScrollViewPaper viewPager;
     private HomeInnerPageAdapter homeInnerPageAdapter;
     //ViewFlipper
     private ViewFlipper flipper;
@@ -230,7 +206,7 @@ public class home extends Fragment {
 
         //初始化
         setAdapter();
-        handler.post(task);
+      //  handler.post(task);
 
        // Log.v("dis", String.valueOf(mainPaper));
 
@@ -267,7 +243,7 @@ public class home extends Fragment {
         messengeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), EntertainmentActivity.class));
+                startActivity(new Intent(getActivity(), EntertainmentActivityForCombat.class));
             }
         });
         //输入框
@@ -399,19 +375,19 @@ public class home extends Fragment {
     }
 
 
-    //SharedPreferences
-    private Runnable task = new Runnable() {
-        public void run() {
-            // TODOAuto-generated method stub
-            handler.postDelayed(this, 400);//设置延迟时间
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            String preferencesString = preferences.getString("signature", "default_value");
-            if (preferencesString != signature.getText())
-                signature.setText(preferencesString);
-
-
-        }
-    };
+//    //SharedPreferences
+//    private Runnable task = new Runnable() {
+//        public void run() {
+//            // TODOAuto-generated method stub
+//            handler.postDelayed(this, 400);//设置延迟时间
+//            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+//            String preferencesString = preferences.getString("signature", "default_value");
+//            if (preferencesString != signature.getText())
+//                signature.setText(preferencesString);
+//
+//
+//        }
+//    };
 
 
     private void setAdapter() {

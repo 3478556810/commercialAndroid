@@ -1,6 +1,8 @@
 package com.example.carouselfigure.fragment;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -24,16 +26,18 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.example.carouselfigure.ClientActivity;
+import com.example.carouselfigure.cardinalActivity.ClientActivity;
 import com.example.carouselfigure.R;
-import com.example.carouselfigure.SettingsActivity;
+import com.example.carouselfigure.cardinalActivity.SettingsActivity;
 import com.example.carouselfigure.adapter.RecyclerAdapterForComments;
 import com.example.carouselfigure.entity.Comments;
 import com.example.carouselfigure.sqlite.DBHelper;
@@ -54,6 +58,7 @@ public class mine extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private  static String transformCode;
     private static final int RESULT_OK = 1;
     private Handler handler = new Handler();
     // TODO: Rename and change types of parameters
@@ -112,6 +117,7 @@ public class mine extends Fragment {
         hHead = view.findViewById(R.id.h_head);
         setting_btn = view.findViewById(R.id.setting_btn);
         signature = view.findViewById(R.id.user_signature);
+       money=view.findViewById(R.id.money_mine);
         Glide.with(getActivity()).load(R.drawable.commodity_shancadoll)
                 .bitmapTransform(new BlurTransformation(getActivity(), 25), new CenterCrop(getActivity()))
                 .into(hBack);
@@ -147,6 +153,32 @@ public class mine extends Fragment {
                 return true;
             }
         });
+
+view.findViewById(R.id.wallet).setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        final EditText input = new EditText(getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("兑换码").setIcon(R.drawable.transformcode).setView(input)
+                .setNegativeButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        transformCode=input.getText().toString();
+                        if (transformCode.contains("123"))
+                        Toast.makeText(getActivity(),"兑换成功！！！",Toast.LENGTH_LONG).show();
+                   else
+                            Toast.makeText(getActivity(),"兑换码失效。。。",Toast.LENGTH_LONG).show();
+                    }
+                });
+        builder.setPositiveButton("取消", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getActivity(),"兑换失败...",Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.show();
+    }
+});
+
 
         return view;
     }
@@ -206,7 +238,7 @@ public class mine extends Fragment {
             // TODOAuto-generated method stub
             handler.postDelayed(this, 100);
             //需要执行的代码
-            DBHelper dBHelper = new DBHelper(getActivity(), "Data.db", null, 1);
+            DBHelper dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
             dBHelper.getWritableDatabase();
             SQLiteDatabase db = dBHelper.getReadableDatabase();
             Cursor cursor = db.query(false, "comments", null, null, null, null, null, null, null);
@@ -225,7 +257,16 @@ public class mine extends Fragment {
                     } while (cursor.moveToNext());
                 }
             commentsCount = cursor.getCount();
+                cursor.close();
 
+
+            cursor = db.query(false, "users", null, null, null, null, null, null, null);
+                if (cursor.moveToFirst()) {//游标指向第一行遍历对象
+                        money.setText("¥"+cursor.getString(cursor.getColumnIndex("money")));
+                }
+                cursor.close();
+
+         cursor = db.query(false, "comments", null, null, null, null, null, null, null);
             //点赞和时间刷新
             for (int i = 0; i < recyclerView.getChildCount(); i++) {
                 ConstraintLayout layout = (ConstraintLayout) recyclerView.getChildAt(i);

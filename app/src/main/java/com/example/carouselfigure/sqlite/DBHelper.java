@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -44,8 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
             +"intro blob,"
             +"store text,"
             +"imgId text,"
-            +"prize text,"
-            + "foreign key (userId) references users(userId))";
+            +"prize text)";
 
     //建历史记录表
     public static final String History_table="create table history("+"historyId integer primary key,"
@@ -113,6 +113,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL(Comments_table);
         db.execSQL(User_table);
+        ContentValues values1 =new ContentValues();
+        values1.put("userId","0");
+        values1.put("money","2200");
+        db.insert("users",null,values1);
         db.execSQL(Order_table);
         db.execSQL(History_table);
 

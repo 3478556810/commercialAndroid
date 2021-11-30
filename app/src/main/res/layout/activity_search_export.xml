@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchExportActivity">
+    tools:context=".cardinalActivity.SearchExportActivity">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/exportCommodity_view"
         android:layout_width="match_parent"

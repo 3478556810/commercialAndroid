@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".EntertainmentActivity">
+    tools:context=".EntertainmentActivity.EntertainmentActivityForCombat">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -17,26 +17,233 @@
             android:text="关于口袋妖怪在现实世界会发生什么这档事"
         />
     </androidx.appcompat.widget.Toolbar>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:orientation="vertical"
+       android:layout_weight="1"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:paddingLeft="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center"
+                android:text="HP"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <ProgressBar
+                android:layout_gravity="center"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="100dp"
+                android:layout_height="10dp"
+                android:progressDrawable="@drawable/horizontalpbforhp"
+                android:progress="100"/>
+                <TextView
+                    android:layout_marginLeft="3dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="0"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:paddingLeft="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center"
+                    android:text="MP"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <ProgressBar
+                    android:layout_gravity="center"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:progressDrawable="@drawable/horizontalpbformp"
+                    android:progress="100"/>
+                <TextView
+                    android:layout_marginLeft="3dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="0"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingLeft="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center"
+                    android:text="EXP"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <ProgressBar
+                    android:layout_gravity="center"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:progressDrawable="@drawable/horizontalpbforexp"
+                    android:progress="100"/>
+                <TextView
+                    android:layout_marginLeft="3dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="0"/>
+            </LinearLayout>
+        </LinearLayout>
 <ImageView
     android:id="@+id/myFirstAnim"
-    android:layout_marginTop="100dp"
-    android:layout_marginLeft="50dp"
+   android:src="@drawable/phl_state_common"
+    android:layout_gravity="center"
     android:layout_width="100dp"
+    android:layout_marginTop="10dp"
     android:layout_height="100dp"/>
 
-<Button
-    android:id="@+id/commonAtk"
-    android:layout_marginTop="20dp"
-    android:layout_marginLeft="80dp"
-    android:background="@drawable/ovalretcred"
-    android:text="A"
-    android:textSize="25dp"
-    android:layout_width="40dp"
-    android:layout_height="40dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:paddingLeft="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center"
+                    android:text="HP"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <ProgressBar
+                    android:layout_gravity="center"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:progressDrawable="@drawable/horizontalpbforhp"
+                    android:progress="100"/>
+                <TextView
+                    android:layout_marginLeft="3dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="0"/>
+            </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="MP" />
+
+                <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/horizontalpbformp" />
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="3dp"
+                    android:text="0" />
+            </LinearLayout>
+            <LinearLayout
+                android:paddingLeft="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center"
+                    android:text="EXP"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <ProgressBar
+                    android:layout_gravity="center"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:progressDrawable="@drawable/horizontalpbforexp"
+                    android:progress="100"/>
+                <TextView
+                    android:layout_marginLeft="3dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="0"/>
+            </LinearLayout>
+        </LinearLayout>
+    <ImageView
+        android:id="@+id/opponentAnim"
+        android:background="@drawable/phl_state_common"
+     android:layout_gravity="center"
+        android:layout_width="100dp"
 
 
+  android:layout_marginTop="10dp"
+        android:layout_height="100dp"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="210dp">
+        <TextView
+            android:gravity="center"
+            android:text="上吧，皮卡丘！！！"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"/>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="宠物"
+       />
+    <Button
+        android:text="技能"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <Button
+        android:text="背包"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

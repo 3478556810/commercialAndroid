@@ -94,6 +94,18 @@
 
                     />
 
+                <Button
+
+                    android:id="@+id/purchase_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="16dp"
+
+
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/purchase"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

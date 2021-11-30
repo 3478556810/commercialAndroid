@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.shopping"
+    tools:context=".fragment.purchase"
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
@@ -27,21 +27,21 @@
     android:layout_marginLeft="120dp"
     android:textColor="@color/white"/>
     </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
     <androidx.core.widget.NestedScrollView
         android:background="#DDE7EC"
         android:layout_width="match_parent"
         android:layout_height="500dp">
-    <FrameLayout
 
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="500dp">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/purchase_rcView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-    </FrameLayout>
+
     </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
     <com.google.android.material.bottomappbar.BottomAppBar
 
         android:layout_width="match_parent"
@@ -85,9 +85,10 @@
             android:textColor="#E91E63"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:text="249"
+            android:text="0.0"
             />
         <Button
+            android:id="@+id/delOrderItemBtn"
             android:background="@drawable/ovalretcyellow"
             android:text="删除"
             android:textSize="14dp"
@@ -97,9 +98,9 @@
             android:layout_height="40dp"/>
         <Button
             android:background="@drawable/ovalretcred"
-
+android:id="@+id/payForOrder"
             android:layout_marginLeft="10dp"
-            android:text="去结算(1)"
+            android:text="去结算"
             android:singleLine="true"
             android:textSize="15dp"
             android:textColor="@color/white"

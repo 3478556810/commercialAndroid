@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
 
     android:orientation="vertical"
-    tools:context=".ReadyPostActivity">
+    tools:context=".cardinalActivity.ReadyPostActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"

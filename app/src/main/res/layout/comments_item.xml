@@ -159,7 +159,7 @@
                     android:layout_margin="10dp"
                     android:padding="20dp"
                     android:background="#72D6D7DD"
-                    android:text="@string/signature" />
+                    android:text="@string/commoditySummary" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

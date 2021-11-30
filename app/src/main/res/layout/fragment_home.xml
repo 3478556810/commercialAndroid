@@ -179,7 +179,7 @@
                 android:background="@drawable/bgfortitle"
 
                 />
-<androidx.viewpager.widget.ViewPager
+<com.example.carouselfigure.widget.NoScrollViewPaper
     android:id="@+id/homeInnerContainer"
     android:layout_below="@id/hNavigation"
     android:layout_width="match_parent"

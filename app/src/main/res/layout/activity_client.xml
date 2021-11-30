@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".cardinalActivity.MainActivity">
 
 
 
@@ -71,19 +71,36 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:textSize="10dp"
-        android:layout_marginLeft="120dp"
+     android:layout_weight="1"
         android:layout_gravity="center"
-        android:text="更新商品" />
+        android:text="增加商品" />
 
     <Button
-        android:id="@+id/flushTable"
+        android:layout_weight="1"
+        android:id="@+id/upgradeTable"
         android:background="@drawable/ovalretcyellow"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:textSize="10dp"
         android:layout_gravity="center"
-        android:text="打扫商品" />
+        android:text="更新商品" />
 
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/flushTable"
+            android:background="@drawable/ovalretcforrigister"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="10dp"
+            android:layout_gravity="center"
+            android:text="删除商品" />
+        <Button
+            android:id="@+id/commodityPaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="商品页面"
+            />
     </LinearLayout>
 </LinearLayout>
 

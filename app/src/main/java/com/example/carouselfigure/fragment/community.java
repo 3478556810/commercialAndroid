@@ -26,7 +26,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.example.carouselfigure.R;
-import com.example.carouselfigure.ReadyPostActivity;
+import com.example.carouselfigure.cardinalActivity.ReadyPostActivity;
 import com.example.carouselfigure.adapter.RecyclerAdapterForComments;
 import com.example.carouselfigure.adapter.RecyclerAdapterForCommunity;
 import com.example.carouselfigure.entity.Comments;
@@ -118,7 +118,7 @@ public class community extends Fragment {
         //ForComments
         recyclerViewForComments = view.findViewById(R.id.community_commentsView);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.commodity_shancadoll);
-        DBHelper dBHelper = new DBHelper(getActivity(), "Data.db", null, 1);
+        DBHelper dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
         dBHelper.getWritableDatabase();
         SQLiteDatabase db = dBHelper.getReadableDatabase();
         Cursor cursor = db.query(false, "comments", null, null, null, null, null, null, null);
@@ -234,7 +234,7 @@ public class community extends Fragment {
                 TextView apprecaite_count = layout.findViewById(R.id.appreciate_count);
                 TextView past_time = layout.findViewById(R.id.comments_passTime);
                 //
-                DBHelper dBHelper = new DBHelper(getActivity(), "Data.db", null, 1);
+                DBHelper dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
                 dBHelper.getWritableDatabase();
                 SQLiteDatabase db = dBHelper.getReadableDatabase();
                 Cursor cursor = db.query(false, "comments", null, null, null, null, null, null, null);

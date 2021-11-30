@@ -24,6 +24,8 @@ public class Commodity implements Serializable {
     private String belong;
     private String tag;
     private DBHelper dBHelper;
+    ArrayList<String> id_arr=new ArrayList<>();
+    ArrayList<String> name_arr=new ArrayList<>();
     ArrayList<String> intro_arr=new ArrayList<>();
     ArrayList<String> img_arr=new ArrayList<>();
     ArrayList<String> prize_arr=new ArrayList<>();
@@ -36,6 +38,8 @@ public class Commodity implements Serializable {
             do {
                 //向适配器中添加数据
 //                Log.v("1", String.valueOf(commodity_id));
+             id_arr.add(cursor.getString(cursor.getColumnIndex("id")));
+                name_arr.add(cursor.getString(cursor.getColumnIndex("name")));
                 intro_arr.add(cursor.getString(cursor.getColumnIndex("intro")));
                 img_arr.add(cursor.getString(cursor.getColumnIndex("src")));
                 prize_arr.add(cursor.getString(cursor.getColumnIndex("prize")));
@@ -43,8 +47,8 @@ public class Commodity implements Serializable {
             }while (cursor.moveToNext());
         }
         cursor.close();
-
-
+this.commodity_id=commodity_id;
+        this.name = name_arr.get(commodity_id);
         this.introduction = intro_arr.get(commodity_id);
         this.imageId = strToInt(img_arr.get(commodity_id));
         this.prize = Double.parseDouble(prize_arr.get(commodity_id));
@@ -116,5 +120,21 @@ public Commodity (int id, String name, String intro, String belong, Bitmap bitma
 
     public String getBelong() {
         return belong;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCommodity_id() {
+        return commodity_id;
+    }
+
+    public void setCommodity_id(int commodity_id) {
+        this.commodity_id = commodity_id;
     }
 }

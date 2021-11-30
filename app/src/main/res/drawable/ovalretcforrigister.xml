@@ -9,7 +9,7 @@
         android:color="#00000000" />
 
     <!-- 形状颜色（如果需要的是空心矩形, 则形状颜色设置为透明） -->
-    <solid android:color="#03A9F4" />
-    <corners android:radius="50dp" />
+    <solid android:color="#5FBCE6" />
+    <corners android:radius="10dp" />
 
 </shape>
