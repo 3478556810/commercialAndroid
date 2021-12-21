@@ -39,7 +39,7 @@ import com.example.carouselfigure.cardinalActivity.ClientActivity;
 import com.example.carouselfigure.R;
 import com.example.carouselfigure.cardinalActivity.SettingsActivity;
 import com.example.carouselfigure.adapter.RecyclerAdapterForComments;
-import com.example.carouselfigure.entity.Comments;
+import com.example.carouselfigure.Bean.Comments;
 import com.example.carouselfigure.sqlite.DBHelper;
 import com.example.carouselfigure.util.TimeUtil;
 import com.example.carouselfigure.widget.MarqueeTextView;
@@ -238,7 +238,9 @@ view.findViewById(R.id.wallet).setOnClickListener(new View.OnClickListener() {
             // TODOAuto-generated method stub
             handler.postDelayed(this, 100);
             //需要执行的代码
+
             DBHelper dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
+            if(dBHelper!=null)
             dBHelper.getWritableDatabase();
             SQLiteDatabase db = dBHelper.getReadableDatabase();
             Cursor cursor = db.query(false, "comments", null, null, null, null, null, null, null);

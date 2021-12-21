@@ -1,7 +1,6 @@
-package com.example.carouselfigure.entity;
+package com.example.carouselfigure.Bean;
 
 import android.graphics.Bitmap;
-import android.media.Image;
 
 public class Comments {
     private int poster_id;

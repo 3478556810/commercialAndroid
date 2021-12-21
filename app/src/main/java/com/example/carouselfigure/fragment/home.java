@@ -3,7 +3,6 @@ package com.example.carouselfigure.fragment;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -13,10 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import androidx.viewpager.widget.ViewPager;
 
 import android.os.Handler;
 import android.provider.MediaStore;
@@ -45,7 +42,7 @@ import com.example.carouselfigure.fragment.homeInner.finePaper;
 import com.example.carouselfigure.fragment.homeInner.fleaMarketPaper;
 import com.example.carouselfigure.fragment.homeInner.mainPaper;
 import com.example.carouselfigure.widget.AnimationNestedScrollView;
-import com.example.carouselfigure.entity.Commodity;
+import com.example.carouselfigure.Bean.Commodity;
 import com.example.carouselfigure.sqlite.DBHelper;
 import com.example.carouselfigure.cardinalActivity.MainActivity;
 import com.example.carouselfigure.R;
@@ -396,7 +393,7 @@ public class home extends Fragment {
         acView.setAdapter(adapter1);
         acView.setOnItemClickListener((parent, view, position, id) -> {
 oList.clear();
-            dBHelper = new DBHelper(getActivity(), "Data.db", null, 1);
+            dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
             dBHelper.getWritableDatabase();
             SQLiteDatabase db = dBHelper.getReadableDatabase();
 

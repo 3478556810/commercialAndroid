@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.carouselfigure.R;
-import com.example.carouselfigure.entity.Commodity;
+import com.example.carouselfigure.Bean.Commodity;
 
 import java.util.List;
 

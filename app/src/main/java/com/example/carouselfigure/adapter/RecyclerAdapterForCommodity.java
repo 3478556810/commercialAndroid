@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.carouselfigure.entity.Commodity;
+import com.example.carouselfigure.Bean.Commodity;
 import com.example.carouselfigure.R;
 
 import java.util.List;

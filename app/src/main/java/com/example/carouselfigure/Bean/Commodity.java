@@ -1,4 +1,4 @@
-package com.example.carouselfigure.entity;
+package com.example.carouselfigure.Bean;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,8 +10,6 @@ import com.example.carouselfigure.sqlite.DBHelper;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Commodity implements Serializable {
     private int commodity_id;

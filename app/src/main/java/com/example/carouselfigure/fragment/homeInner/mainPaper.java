@@ -6,7 +6,6 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -19,23 +18,16 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.carouselfigure.cardinalActivity.MainActivity;
 import com.example.carouselfigure.R;
 import com.example.carouselfigure.adapter.RecyclerAdapterForCommodity;
-import com.example.carouselfigure.entity.Bmobentity.Bcommodity;
-import com.example.carouselfigure.entity.Commodity;
+import com.example.carouselfigure.Bean.Commodity;
 import com.example.carouselfigure.sqlite.DBHelper;
-import com.example.carouselfigure.widget.AnimationNestedScrollView;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
@@ -50,7 +42,6 @@ import java.util.Set;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -158,65 +149,65 @@ public class mainPaper extends Fragment {
         handler.post(task);
 
 
-//        //RefreshLayout
-//        refreshLayout.setHeaderTriggerRate((float) 0.5);
-//        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
-//            @Override
-//            public void onRefresh(RefreshLayout refreshlayout) {
-//
-//                refreshlayout.finishRefresh(2000);
-//                //擦除再重构
-//                mList.clear();
-//                dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
-//                dBHelper.getWritableDatabase();
-//                SQLiteDatabase db = dBHelper.getReadableDatabase();
-//                Set<Integer> set = new HashSet<Integer>();
-//                if (db.query(false, "commodity", null, null, null, null, null, null, null).getCount() != 0) {
-//                    for (int i = 0; i < commodityLines; i++) {
-//                        int r;
-//                        do {
-//                            r = (int) (Math.random() * commodityLines);
-//                        } while (set.contains(r));
-//                        set.add(r);
-//                        mList.add(new Commodity(r, db));
-//                    }
-//                    rcAdapter = new RecyclerAdapterForCommodity(mList);
-//                    layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); //每行两个瀑布流排列
-//                    recyclerView.setLayoutManager(layoutManager);
-//                    recyclerView.setAdapter(rcAdapter);
-//                    recyclerView.setItemAnimator(new DefaultItemAnimator());
-//                }
-//            }
-//        });
-//        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
-//            @Override
-//            public void onLoadMore(RefreshLayout refreshlayout) {
-//                refreshlayout.finishLoadMore(2000);
-//                SmartRefreshLayout.LayoutParams linearParams = (SmartRefreshLayout.LayoutParams) classicHeader.getLayoutParams();
-//                linearParams.topMargin = TOPMARGIN + 40;
-//                linearParams.bottomMargin = BOTTOMMARGIN + 40;
-//                linearParams.height = HEIGH + 100;
-//                classicHeader.setLayoutParams(linearParams);
-//                //添加再重构
-//                dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
-//                dBHelper.getWritableDatabase();
-//                SQLiteDatabase db = dBHelper.getReadableDatabase();
-//                Set<Integer> set = new HashSet<Integer>();
-//                for (int i = 0; i < commodityLines; i++) {
-//                    int r;
-//                    do {
-//                        r = (int) (Math.random() * commodityLines);
-//                    } while (set.contains(r));
-//                    set.add(r);
-//                    mList.add(new Commodity(r, db));
-//                }
-//                layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); //每行两个瀑布流排列
-//                recyclerView.setLayoutManager(layoutManager);
-//                recyclerView.setAdapter(rcAdapter);
-//                recyclerView.setItemAnimator(new DefaultItemAnimator());
-//
-//            }
-//        });
+        //RefreshLayout
+        refreshLayout.setHeaderTriggerRate((float) 0.5);
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+
+                refreshlayout.finishRefresh(2000);
+                //擦除再重构
+                mList.clear();
+                dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
+                dBHelper.getWritableDatabase();
+                SQLiteDatabase db = dBHelper.getReadableDatabase();
+                Set<Integer> set = new HashSet<Integer>();
+                if (db.query(false, "commodity", null, null, null, null, null, null, null).getCount() != 0) {
+                    for (int i = 0; i < commodityLines; i++) {
+                        int r;
+                        do {
+                            r = (int) (Math.random() * commodityLines);
+                        } while (set.contains(r));
+                        set.add(r);
+                        mList.add(new Commodity(r, db));
+                    }
+                    rcAdapter = new RecyclerAdapterForCommodity(mList);
+                    layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); //每行两个瀑布流排列
+                    recyclerView.setLayoutManager(layoutManager);
+                    recyclerView.setAdapter(rcAdapter);
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
+                }
+            }
+        });
+        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(RefreshLayout refreshlayout) {
+                refreshlayout.finishLoadMore(2000);
+                SmartRefreshLayout.LayoutParams linearParams = (SmartRefreshLayout.LayoutParams) classicHeader.getLayoutParams();
+                linearParams.topMargin = TOPMARGIN + 40;
+                linearParams.bottomMargin = BOTTOMMARGIN + 40;
+                linearParams.height = HEIGH + 100;
+                classicHeader.setLayoutParams(linearParams);
+                //添加再重构
+                dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
+                dBHelper.getWritableDatabase();
+                SQLiteDatabase db = dBHelper.getReadableDatabase();
+                Set<Integer> set = new HashSet<Integer>();
+                for (int i = 0; i < commodityLines; i++) {
+                    int r;
+                    do {
+                        r = (int) (Math.random() * commodityLines);
+                    } while (set.contains(r));
+                    set.add(r);
+                    mList.add(new Commodity(r, db));
+                }
+                layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); //每行两个瀑布流排列
+                recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setAdapter(rcAdapter);
+                recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+            }
+        });
 
         //gestureListener
 
@@ -256,35 +247,17 @@ public class mainPaper extends Fragment {
         dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
         dBHelper.getWritableDatabase();
         SQLiteDatabase db = dBHelper.getReadableDatabase();
-//        Set<Integer> set = new HashSet<Integer>();
-//        commodityLines = DatabaseUtils.queryNumEntries(db, "commodity");
-//        for (int i = 0; i < commodityLines; i++) {
-//            int r;
-//            do {
-//                r = (int) (Math.random() * commodityLines);
-//            } while (set.contains(r));
-//            set.add(r);
-         //   mList.add(new Commodity(0, db));
-        BmobQuery<Bcommodity> categoryBmobQuery = new BmobQuery<>();
-        categoryBmobQuery.findObjects(new FindListener<Bcommodity>() {
-                                          @Override
-                                          public void done(List<Bcommodity> object, BmobException e) {
-                                              if (e == null) {
+        Set<Integer> set = new HashSet<Integer>();
+        commodityLines = DatabaseUtils.queryNumEntries(db, "commodity");
+        for (int i = 0; i < commodityLines; i++) {
+            int r;
+            do {
+                r = (int) (Math.random() * commodityLines);
+            } while (set.contains(r));
+            set.add(r);
+            mList.add(new Commodity(0, db));
 
-                                                  // toast(String.valueOf(object));
-                                                  for (int i = 0; i < object.size(); i++) {
-                                                      Bcommodity p = object.get(i);
-
-                                                      mList.add(new Commodity(p.getCommodity_id(), db));
-                                                    //toast(String.valueOf(mList));
-                                                  }
-                                                  layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); //每行两个瀑布流排列
-                                                  recyclerView.setLayoutManager(layoutManager);
-                                                  recyclerView.setAdapter(rcAdapter);
-                                                  recyclerView.setItemAnimator(new DefaultItemAnimator());
-                                              }
-                                          }
-                                      });
+        }
     }
     //ViewFlipper AutoFlipper
     private Runnable task = new Runnable() {
@@ -299,23 +272,7 @@ public class mainPaper extends Fragment {
             dBHelper = new DBHelper(getActivity(), "Data.db", null, 2);
             dBHelper.getWritableDatabase();
             SQLiteDatabase db = dBHelper.getReadableDatabase();
-            BmobQuery<Bcommodity> categoryBmobQuery = new BmobQuery<>();
-            categoryBmobQuery.findObjects(new FindListener<Bcommodity>() {
-                @Override
-                public void done(List<Bcommodity> object, BmobException e) {
-                    if (e == null) {
 
-                        // toast(String.valueOf(object));
-                        for (int i = 0; i < object.size(); i++) {
-                            Bcommodity p = object.get(i);
-
-                            mList.add(new Commodity(p.getCommodity_id(), db));
-                            // toast(String.valueOf(idList));
-                        }
-
-                    }
-                }
-            });
             //商品删减/购买
             for (int i = 0; i < recyclerView.getChildCount(); i++) {
                 ConstraintLayout layout = (ConstraintLayout) recyclerView.getChildAt(i);

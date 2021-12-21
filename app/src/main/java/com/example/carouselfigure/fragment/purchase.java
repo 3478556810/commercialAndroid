@@ -3,7 +3,6 @@ package com.example.carouselfigure.fragment;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,17 +20,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.carouselfigure.R;
-import com.example.carouselfigure.adapter.RecyclerAdapterForComments;
-import com.example.carouselfigure.adapter.RecyclerAdapterForCommodity;
 import com.example.carouselfigure.adapter.RecyclerAdapterForPurchaseItem;
-import com.example.carouselfigure.entity.Comments;
-import com.example.carouselfigure.entity.Commodity;
+import com.example.carouselfigure.Bean.Commodity;
 import com.example.carouselfigure.sqlite.DBHelper;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.bmob.v3.util.V;
 
 
 public class purchase extends Fragment {

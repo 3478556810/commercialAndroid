@@ -1,7 +1,5 @@
 package com.example.carouselfigure.adapter;
 
-import android.graphics.Color;
-import android.media.Image;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +8,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.carouselfigure.R;
-import com.example.carouselfigure.entity.Comments;
-import com.example.carouselfigure.entity.Community;
-import com.example.carouselfigure.util.TimeUtil;
+import com.example.carouselfigure.Bean.Community;
 
 
 import java.util.HashMap;

@@ -1,12 +1,6 @@
-package com.example.carouselfigure.entity;
-
-import android.media.Image;
-
-import androidx.cardview.widget.CardView;
+package com.example.carouselfigure.Bean;
 
 import com.example.carouselfigure.R;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Community {
     private int community_id;

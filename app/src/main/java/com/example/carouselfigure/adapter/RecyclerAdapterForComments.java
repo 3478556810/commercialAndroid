@@ -1,6 +1,5 @@
 package com.example.carouselfigure.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.carouselfigure.entity.Comments;
+import com.example.carouselfigure.Bean.Comments;
 import com.example.carouselfigure.R;
 
 import java.util.List;
